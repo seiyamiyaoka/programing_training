@@ -1,0 +1,45 @@
+<div class="container is-max-desktop">
+
+  <section class="hero is-primary block">
+    <div class="hero-body">
+      <p class="title">Programing Training</p>
+      <p class="subtitle">がんばってね</p>
+    </div>
+  </section>
+
+  <div class="columns">
+    <div class="column">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "box" }) do |f| %>
+        <div class="field">
+          <%= f.label :email, class: "label" %>
+          <div class="control">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "input" %>
+          </div>
+        </div>
+
+        <div class="field">
+          <%= f.label :password, class: "label" %>
+          <div class="control">
+            <%= f.password_field :password, autocomplete: "current-password", class: "input" %>
+          </div>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+
+        <div class="actions">
+          <%= f.submit "Log in", class: "button is-primary" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="column">
+      <figure class="image is-16by9">
+        <%= image_tag "rollingcat.webp" %>
+      </figure>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th><abbr title="Position">id</abbr></th>
+      <th>name</th>
+      <th><%= link_to "管理者追加", new_admin_user_path %></th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <% if @admins %>
+    <% @admins.each do |admin| %>
+      <tr>
+        <td><%= admin.id %></td>
+        <td><%= link_to admin.email, admin_user_path(admin) %></td>
+      </tr>
+    <% end %>
+  <% else %>
+    管理者がいません
+  <% end %>
+  </tbody>
+</table>

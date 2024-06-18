@@ -1,0 +1,34 @@
+<div class="box">
+  <p class="title"><%= @service.evaluate_range %></p>
+</div>
+<nav class="level box">
+  <% @service.evaluation_metrics.each do |metrics| %>
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading"><%= metrics[:name] %></p>
+        <p class="title"><%= metrics[:value] %></p>
+      </div>
+    </div>
+  <% end %>
+
+
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">ユーザ数</p>
+      <p class="title">3,456</p>
+    </div>
+  </div>
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">コメント総数</p>
+      <p class="title">123</p>
+    </div>
+  </div>
+  
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">お気に入り数</p>
+      <p class="title">789</p>
+    </div>
+  </div>
+</nav>
