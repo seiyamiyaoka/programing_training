@@ -10,7 +10,6 @@ class Admin::SessionsController < Devise::SessionsController
   def create
     super
     flash[:notice] = "ログインしました"
-    redirect_to admin_dashboard_path
   end
 
   # DELETE /resource/sign_out
@@ -24,4 +23,9 @@ class Admin::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+
+  private 
+  def after_sign_in_path_for(resource)
+    admin_dashboard_path
+  end
 end
